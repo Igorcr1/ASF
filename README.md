@@ -1,5 +1,5 @@
 <h1><center>Trabalho de Análise de Sistemas Físicos</center></h1>
-<img width="1010" height="549" alt="image" src="https://github.com/user-attachments/assets/03cf3300-2c1c-4422-b508-42ed3721cdd9" />
+<img width="516" height="516" alt="image" src="https://github.com/user-attachments/assets/a12cc34d-bbe9-49f3-97b5-8743af5dc816" />
 <hr></hr>
 <h2>Ideia Geral:</h2>
 <br>Utilizar-se do Numpy com matplotlib e control para plotar gráficos e fazer o trabalho relacionado a Control Systems Engineering.
@@ -15,7 +15,7 @@
 <h3>Instalação no Linux(Base Arch Linux):</h3>
 <br>Aqui há a possibilidade de você usar um ambiente isolado venv para baixar as bibliotecas ou simplesmente baixar o anaconda também e usar o comando acima para baixar o control.
 <br>Digamos que você quer ser <b>Hardcore</b> igual Jorge, então essa é a escolha perfeita para você.
-<img width="500" height="376" alt="image" src="https://github.com/user-attachments/assets/6c40d675-eff1-41c1-aac4-b9fe92bedbc3" />
+<img width="505" height="379" alt="image" src="https://github.com/user-attachments/assets/ffa92656-db63-4023-8e9d-959d8b0bdf82" />
 <ol>
 <li>Primeiramente você vai setar alguma pasta para fazer isso, digamos que seja uma pasta que vc vai criar com mkdir no diretório ~ (ou seja, a pasta pessoal): mkdir Projeto</li>
 <li>Entre na pasta Projeto com o cd:  cd Projeto</li>
@@ -36,9 +36,9 @@ pip install sympy
 
 <hr>
 <h2>Exercício 2 - Sistema elétrico passivo</h2>
-<img width="635" height="418" alt="image" src="https://github.com/user-attachments/assets/dc48d440-dae2-4a3e-be1c-09b2f853eb18" />
+<img width="635" height="418" alt="image" src="https://github.com/user-attachments/assets/aea34ea8-b0dd-46aa-8ef1-a40cbc44b5aa" />
 <br> Lei dos nós é a possibilidade para encontrar as tensões nodais, onde Vc(t) = Vo(t) e que Va(t) = Vi(t). 
-<img width="635" height="418" alt="image" src="https://github.com/user-attachments/assets/bf66f842-f923-4a8a-951e-73167a0a6ee7" />
+<img width="635" height="418" alt="image" src="https://github.com/user-attachments/assets/b2d30641-8d08-4eb8-a825-739981f81e5d" />
 <br> Para equacionar no sympy, os termos isolados serão ajustados juntos.
 <br><b>Utilize os códigos na pasta de Exercício.</b>
 
