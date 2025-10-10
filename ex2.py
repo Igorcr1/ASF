@@ -19,10 +19,10 @@ eq1 = sp.Eq(((Vi - Vb) / (s * L1)) - (Vb * G1) - ((Vb-Vo)*G2), 0)
 eq2 = sp.Eq((-(Vo-Vi) * s * C) + ((Vb - Vo) * G2) - (Vo / (s * L2)), 0)
 solucao = sp.solve([eq1, eq2], [Vb, Vo])
 H_s_symbolic = sp.simplify(solucao[Vo] / Vi)
+print("--- Função de Transferência Simbólica H(s) ---")
 sp.pretty_print(H_s_symbolic)
 
 #H(s) Fc de transferencia substituindo valor
-
 num, den = sp.fraction(H_s_symbolic)
 num_poly = sp.poly(num, s)
 den_poly = sp.poly(den, s)
@@ -45,6 +45,30 @@ print(zeros)
 print("\n\n--- Polos do Sistema ---")
 print(polos)
 
+
+fig0 = plt.figure(0)
+plt.title('Mapa de Polos e Zeros')
+plt.suptitle('ii. Mapa de Polos e Zeros do Sistema', fontsize=16)
+
+
+plt.scatter(np.real(polos), np.imag(polos), s=100, marker='x', color='red', label='Polos')
+plt.scatter(np.real(zeros), np.imag(zeros), s=100, marker='o', facecolors='none', edgecolors='blue', label='Zeros')
+
+
+plt.xlabel('Eixo Real (σ)')
+plt.ylabel('Eixo Imaginário (jω)')
+plt.grid(True)
+plt.axhline(0, color='black', lw=0.5)
+plt.axvline(0, color='black', lw=0.5)
+plt.legend()
+plt.axis('equal') # Garante que a escala dos eixos seja a mesma
+
+# Salva a figura do mapa de polos e zeros
+plt.savefig('mapa_polos_zeros.png')
+print("\nImagem 'mapa_polos_zeros.png' salva.")
+
+
+
 R, P, K = signal.residue(num_coeffs, den_coeffs)
 
 print("\n\n--- Expansão em Frações Parciais ---")
@@ -55,7 +79,7 @@ print(P)
 
 print("\nDecomposição H(s):")
 for i in range(len(R)):
-    print(f"  ({R[i]:.4f}) / (s - ({P[i]:.4f}))")
+    print(f"  ({R[i]:.4g}) / (s - ({P[i]:.4g}))")
     if i < len(R) - 1:
         print("  +")
 
@@ -82,7 +106,7 @@ plt.grid(True)
 plt.legend()
 # Salva a figura 1
 plt.savefig('componentes_resposta_parcial.png')
-print("\nImagem 'componentes_resposta_parcial.png' salva.")
+print("Imagem 'componentes_resposta_parcial.png' salva.")
 
 
 #plotando o impulso de dirac
@@ -113,4 +137,4 @@ plt.savefig('resposta_degrau.png')
 print("Imagem 'resposta_degrau.png' salva.")
 plt.close('all')
 
-print("\nAs 3 imagens foram salvas na pasta.")
+print("\nAs 4 imagens foram salvas na pasta.")
